@@ -25,5 +25,17 @@
     {
         this.saldo += valor;
     }
+                                        //Chama outra referencia, com todos os metodos e atributos.
+    public bool Transferir(double valor, ContaCorrente contaTransferir)
+    {
+        if(this.saldo < valor)
+        {
+            return true;//Return true para a função no momento de sua execução
+        }
+
+        this.saldo -= valor;
+        contaTransferir.saldo += valor;
+        return true;
+    }
 
 }
