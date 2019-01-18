@@ -1,6 +1,6 @@
 ﻿//using _05_ByteBank; //Para não precisar indicar o nameSpace na frente da Classe, pode-se adicionar o mesmo no using, no inicio no arquivo.
 
-namespace _06_ByteBank //Desta maneira, todas as classes que estão neste nameSpace são encontradas pelo C#
+namespace _07_ByteBank //Desta maneira, todas as classes que estão neste nameSpace são encontradas pelo C#
 {
     public class ContaCorrente
     {
@@ -13,12 +13,33 @@ namespace _06_ByteBank //Desta maneira, todas as classes que estão neste nameSp
         //public Cliente titular;//utilizando using
         //public Cliente titular;// Referencia a classe pessoa e todos os seus atributos e talvez métodos;
 
-        
+        /*
+         * static indica que esta propriedade pertence a Classe, todos desta classe de forma compartilhada, todos os objetos compartilham desta informação
+         * Quando tentarmos acessar esta informação, não chamaremos pelo objeto, mas sim pela classe, como: ContaCorrente.TotalDeContasCriadas
+         *  e não objeto.TotalDeContasCriadas
+         */
+        public static int TotalDeContasCriadas{ get; private set; }
+
         public int Agencia { get; set; }
         public int Numero { get; set; }
         //public int agencia;
         //public int numero;
         private double _saldo = 100; //Novo valor padrão
+
+        //Construtor, obriga a passar pelos Getters e Setters, não deixando que fique sem passar pelas validações do Setter
+        public ContaCorrente(int agencia, int numero)
+        {
+            this.Numero = numero;
+            this.Agencia = agencia;
+
+            /*
+             * Não chamamos como um atributo usando this, mas sim pelo nome da classe
+             * Ou apenas adicionando o nome da propriedade
+             */
+            //ContaCorrente.TotalDeContasCriadas++
+            TotalDeContasCriadas++;
+        }
+
 
         /*
          * criamos propriedes sem logicas necessárias, apenas retorno, como esta abaixo, podemos criar na mesma linha public Cliente Titular { get; set; }

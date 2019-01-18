@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _06_ByteBank
+namespace _06_ByteBank3
 {
     class Program
     {
@@ -13,9 +13,9 @@ namespace _06_ByteBank
 
             ContaCorrente contaPessoa = new ContaCorrente();
             Cliente cliente1 = new Cliente();
-            cliente1.Nome = "Pessoa1";
-            cliente1.Cpf = "123.123.123-45";
-            cliente1.Profissao = "Trabalhadô";
+            cliente1.nome = "Pessoa1";
+            cliente1.cpf = "123.123.123-45";
+            cliente1.profissao = "Trabalhadô";
 
             contaPessoa.Titular = cliente1;
 
@@ -24,7 +24,7 @@ namespace _06_ByteBank
             /*Console.WriteLine(contaPessoa.GetSaldo());// Esta maneira é utilizando com o metodo GetSaldo, criado separadamente*/
 
             contaPessoa.Saldo = -10;
-            Console.WriteLine(contaPessoa.Titular.Nome);
+            Console.WriteLine(contaPessoa.Titular.nome);
             Console.WriteLine(contaPessoa.Saldo);
 
             Console.ReadLine();

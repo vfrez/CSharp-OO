@@ -1,6 +1,6 @@
 ﻿//using _05_ByteBank; //Para não precisar indicar o nameSpace na frente da Classe, pode-se adicionar o mesmo no using, no inicio no arquivo.
 
-namespace _06_ByteBank //Desta maneira, todas as classes que estão neste nameSpace são encontradas pelo C#
+namespace _06_ByteBank3 //Desta maneira, todas as classes que estão neste nameSpace são encontradas pelo C#
 {
     public class ContaCorrente
     {
@@ -13,17 +13,11 @@ namespace _06_ByteBank //Desta maneira, todas as classes que estão neste nameSp
         //public Cliente titular;//utilizando using
         //public Cliente titular;// Referencia a classe pessoa e todos os seus atributos e talvez métodos;
 
-        
-        public int Agencia { get; set; }
-        public int Numero { get; set; }
-        //public int agencia;
-        //public int numero;
+        public int agencia;
+        public int numero;
         private double _saldo = 100; //Novo valor padrão
 
-        /*
-         * criamos propriedes sem logicas necessárias, apenas retorno, como esta abaixo, podemos criar na mesma linha public Cliente Titular { get; set; }
-         * Caso ocorra de ser necessária uma lógica de validação só expandir da mesma maneira que está abaixo e realziar os ajustes.             
-         */
+        //criamos propriedes sem logicas necessárias, apenas retorno, como esta abaixo, podemos criar na mesma linha public Cliente Titular { get; set; }
         private Cliente _titular;
         public Cliente Titular
         {
@@ -98,5 +92,6 @@ namespace _06_ByteBank //Desta maneira, todas as classes que estão neste nameSp
             contaTransferir._saldo += valor;
             return true;
         }
+
     }
 }
