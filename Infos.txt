@@ -1,0 +1,2 @@
+Propriedade estática é uma propriedade em comum para todos os objetos instanciados em uma classe 
+
